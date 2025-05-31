@@ -17,7 +17,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 //axios.defaults.baseURL = 'http://localhost:5000';
-axios.defaults.baseURL = 'REACT_APP_API_URL';
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 const App = () => {
   const [form, setForm] = useState({ title: "", author: "", summary: "", notes: "", doi: "" });
