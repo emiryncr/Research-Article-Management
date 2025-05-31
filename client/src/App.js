@@ -16,7 +16,8 @@ import {
   InputAdornment 
 } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-axios.defaults.baseURL = 'http://localhost:5000';
+//axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'https://research-article-management-backend.onrender.com';
 
 const App = () => {
   const [form, setForm] = useState({ title: "", author: "", summary: "", notes: "", doi: "" });
