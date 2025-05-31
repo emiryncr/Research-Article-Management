@@ -1,5 +1,5 @@
 // === client/src/App.js ===
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import {
   Container,
@@ -26,14 +26,15 @@ const App = () => {
   const [doiLoading, setDoiLoading] = useState(false);
   const [fileLoading, setFileLoading] = useState(false);
 
-  const fetchArticles = async () => {
-    const res = await axios.get(`/api/articles?search=${search}`);
-    setArticles(res.data);
-  };
 
-  useEffect(() => {
-    fetchArticles();
-  }, [search]);
+const fetchArticles = useCallback(async () => {
+  const res = await axios.get(`/api/articles?search=${search}`);
+  setArticles(res.data);
+}, [search]);
+
+useEffect(() => {
+  fetchArticles();
+}, [fetchArticles]);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
