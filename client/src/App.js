@@ -295,7 +295,7 @@ const handleFileChange = (e) => {
                 {a.file && (
                   <Button
                     variant="outlined"
-                    href={`/api/articles/download/${a.file}`}
+                    href={`https://research-article-management-backend.onrender.com/api/articles/download/${a.file}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     size="small"
